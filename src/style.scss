@@ -1,0 +1,80 @@
+@import url(./destyle.css);
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.verticalLine {
+  position: absolute;
+  height: 100vh;
+  left: 50%;
+  border: 1px dotted silver;
+  z-index: -1;
+}
+
+.horizontalLine {
+  position: absolute;
+  width: 100vw;
+  top: 50%;
+  border: 1px dotted silver;
+  z-index: -1;
+}
+
+// .circle1 {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   width: 10vw;
+//   height: 10vw;
+//   background-color: rgba(0,0,0,0.8);
+//   border-radius: 50%;
+//   z-index: 1;
+//   transform: translate(-50%, -50%);
+// }
+
+@mixin figure($top, $left, $width, $height, $color, $z-index, $radius){
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  opacity: 0.9;
+  z-index: $z-index;
+  border-radius: $radius;
+  transform: translate(-50%, -50%);
+}
+
+.object {
+  &1 {
+    @include figure(50%, 50%, 30vw, 30vw, #ff7f7f, 1, 50%);
+  }
+  &2 {
+    @include figure(47%, 55%, 2vw, 2vw, #ff7fbf, 2, 50%);
+  }
+  &3 {
+    @include figure(55%, 65%, 4vw, 4vw, #ff7fff, 3, 50%);
+  }
+  &4 {
+    @include figure(52%, 40%, 4.5vw, 4.5vw, #bf7fff, 4, 50%);
+  }
+  &5 {
+    @include figure(53%, 46%, 3.7vw, 3.7vw, #7f7fff, 5, 50%);
+  }
+  &6 {
+    @include figure(40%, 40%, 8vw, 8vw, #7fffbf, 6, 50%);
+  }
+  &7 {
+    @include figure(49%, 53%, 7vw, 7vw, #bfff7f, 7, 50%);
+  }
+  &8 {
+    @include figure(45%, 58%, 4vw, 4vw, #ffff7f, 8, 50%);
+  }
+  &9 {
+    @include figure(43%, 65%, 3vw, 3vw, #7fbfff, 9, 50%);
+  }
+  &10 {
+    @include figure(60%, 38%, 4vw, 4vw, #ffbf7f, 10, 50%);
+  }
+}
