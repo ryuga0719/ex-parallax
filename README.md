@@ -1,1 +1,7 @@
-ex-parallax
+# Practice parallax effect
+## Dev process
+1. npm i
+2. npm run dev
+## Tech
+- TypeScript
+- Vite
