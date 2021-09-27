@@ -48,23 +48,23 @@ class AnimateObject {
 
 }
 
-const object1 = new AnimateObject('.object1', 0.12, -0.1);
+const object1 = new AnimateObject('.object1', 0.1, 0);
 object1.doAnimate();
-const object2 = new AnimateObject('.object2', 0.1, -0.13);
+const object2 = new AnimateObject('.object2', 0.1, -0.05);
 object2.doAnimate();
-const object3 = new AnimateObject('.object3', 0.08, -0.16);
+const object3 = new AnimateObject('.object3', 0.1, -0.06);
 object3.doAnimate();
-const object4 = new AnimateObject('.object4', 0.09, -0.19);
+const object4 = new AnimateObject('.object4', 0.1, -0.08);
 object4.doAnimate();
-const object5 = new AnimateObject('.object5', 0.1, -0.22);
+const object5 = new AnimateObject('.object5', 0.1, -0.15);
 object5.doAnimate();
-const object6 = new AnimateObject('.object6', 0.1, -0.25);
+const object6 = new AnimateObject('.object6', 0.1, -0.2);
 object6.doAnimate();
-const object7 = new AnimateObject('.object7', 0.07, -0.28);
+const object7 = new AnimateObject('.object7', 0.1, -0.08);
 object7.doAnimate();
-const object8 = new AnimateObject('.object8', 0.06, -0.31);
+const object8 = new AnimateObject('.object8', 0.1, -0.1);
 object8.doAnimate();
-const object9 = new AnimateObject('.object9', 0.08, -0.35);
+const object9 = new AnimateObject('.object9', 0.1, -0.09);
 object9.doAnimate();
-const object10 = new AnimateObject('.object10', 0.07, -0.38);
+const object10 = new AnimateObject('.object10', 0.1, -0.07);
 object10.doAnimate();

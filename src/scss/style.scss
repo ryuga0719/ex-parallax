@@ -1,4 +1,10 @@
-@import url(./destyle.css);
+@import url(./destyle.scss);
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
 #wrapper {
   width: 100vw;
   height: 100vh;
@@ -40,41 +46,50 @@
   width: $width;
   height: $height;
   background-color: $color;
-  opacity: 0.9;
+  opacity: 1;
   z-index: $z-index;
   border-radius: $radius;
   transform: translate(-50%, -50%);
 }
 
+@mixin png($top, $left, $width, $z-index){
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  z-index: $z-index;
+  transform: translate(-50%, -50%);
+}
+
 .object {
   &1 {
-    @include figure(50%, 50%, 30vw, 30vw, #ff7f7f, 1, 50%);
+    @include png(50%, 50%, 40vw, 1);
   }
   &2 {
-    @include figure(47%, 55%, 2vw, 2vw, #ff7fbf, 2, 50%);
+    @include png(43%, 70%, 5vw, 2);
   }
   &3 {
-    @include figure(55%, 65%, 4vw, 4vw, #ff7fff, 3, 50%);
+    @include png(55%, 65%, 4vw, 3);
   }
   &4 {
-    @include figure(52%, 40%, 4.5vw, 4.5vw, #bf7fff, 4, 50%);
+    @include png(45%, 34%, 7vw, 4);
   }
   &5 {
-    @include figure(53%, 46%, 3.7vw, 3.7vw, #7f7fff, 5, 50%);
+    @include png(67%, 53%, 8vw, 9);
   }
   &6 {
-    @include figure(40%, 40%, 8vw, 8vw, #7fffbf, 6, 50%);
+    @include png(63%, 43%, 15vw, 10);
   }
   &7 {
-    @include figure(49%, 53%, 7vw, 7vw, #bfff7f, 7, 50%);
+    @include png(57%, 57%, 11vw, 7);
   }
   &8 {
-    @include figure(45%, 58%, 4vw, 4vw, #ffff7f, 8, 50%);
+    @include png(75%, 58%, 8vw, 8);
   }
   &9 {
-    @include figure(43%, 65%, 3vw, 3vw, #7fbfff, 9, 50%);
+    @include png(62%, 68%, 5vw, 9);
   }
   &10 {
-    @include figure(60%, 38%, 4vw, 4vw, #ffbf7f, 10, 50%);
+    @include png(60%, 30%, 8vw, 5);
   }
 }
