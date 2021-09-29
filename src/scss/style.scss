@@ -27,32 +27,7 @@ img {
   z-index: -1;
 }
 
-// .circle1 {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 10vw;
-//   height: 10vw;
-//   background-color: rgba(0,0,0,0.8);
-//   border-radius: 50%;
-//   z-index: 1;
-//   transform: translate(-50%, -50%);
-// }
-
-@mixin figure($top, $left, $width, $height, $color, $z-index, $radius){
-  position: absolute;
-  top: $top;
-  left: $left;
-  width: $width;
-  height: $height;
-  background-color: $color;
-  opacity: 1;
-  z-index: $z-index;
-  border-radius: $radius;
-  transform: translate(-50%, -50%);
-}
-
-@mixin png($top, $left, $width, $z-index){
+@mixin imgSettings($top, $left, $width, $z-index){
   position: absolute;
   top: $top;
   left: $left;
@@ -61,35 +36,34 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.object {
-  &1 {
-    @include png(50%, 50%, 40vw, 1);
-  }
-  &2 {
-    @include png(43%, 70%, 5vw, 2);
-  }
-  &3 {
-    @include png(55%, 65%, 4vw, 3);
-  }
-  &4 {
-    @include png(45%, 34%, 7vw, 4);
-  }
-  &5 {
-    @include png(67%, 53%, 8vw, 9);
-  }
-  &6 {
-    @include png(63%, 43%, 15vw, 10);
-  }
-  &7 {
-    @include png(57%, 57%, 11vw, 7);
-  }
-  &8 {
-    @include png(75%, 58%, 8vw, 8);
-  }
-  &9 {
-    @include png(62%, 68%, 5vw, 9);
-  }
-  &10 {
-    @include png(60%, 30%, 8vw, 5);
-  }
+.city {
+  @include imgSettings(50%, 50%, 40vw, 3);
 }
+.drone {
+  @include imgSettings(35%, 65%, 6vw, 2);
+}
+.online {
+  @include imgSettings(25%, 57%, 3vw, 1);
+}
+.money {
+  @include imgSettings(30%, 42%, 5vw, 4);
+}
+.financial {
+  @include imgSettings(77%, 57%, 8vw, 9);
+}
+.vr {
+  @include imgSettings(65%, 40%, 17vw, 10);
+}
+.mobile {
+  @include imgSettings(57%, 57%, 10vw, 7);
+}
+.error {
+  @include imgSettings(67%, 70%, 6vw, 8);
+}
+.calender {
+  @include imgSettings(47%, 75%, 4vw, 9);
+}
+.social {
+  @include imgSettings(50%, 27%, 7vw, 5);
+}
+
