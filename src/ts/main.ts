@@ -6,19 +6,19 @@ import { gsap } from 'gsap';
 */
 class AnimateObject {
   // 対象のオブジェクト
-  target: Element | null;
+  #target: Element | null;
   // easingの具合(どの程度緩やかにmoveさせるか)
-  ease: number;
+  #ease: number;
   // 変位のベクトル
-  easeVector: number;
+  #easeVector: number;
 
   // マウスの基準点の座標
-  mouseX = 0;
-  mouseY = 0;
+  #mouseX = 0;
+  #mouseY = 0;
 
   // マウスの現在の座標
-  currentX = 0;
-  currentY = 0;
+  #currentX = 0;
+  #currentY = 0;
 
   /**
   * アニメーションさせる対象とeasingの設定
@@ -31,41 +31,41 @@ class AnimateObject {
     _ease: number,
     _easeVector: number
   ) {
-    this.target = document.querySelector(_target);
-    this.ease = _ease;
-    this.easeVector = _easeVector;
+    this.#target = document.querySelector(_target);
+    this.#ease = _ease;
+    this.#easeVector = _easeVector;
   }
 
   /**
   * カーソルの原点をウィンドウの中心にする(元々は左上)
   * @param {MouseEvent} e イベントハンドラ
   */
-  mouseMove = (e:MouseEvent) => {
-    this.mouseX = e.clientX - (window.innerWidth / 2);
-    this.mouseY = e.clientY - (window.innerHeight / 2);
+  #mouseMove = (e:MouseEvent) => {
+    this.#mouseX = e.clientX - (window.innerWidth / 2);
+    this.#mouseY = e.clientY - (window.innerHeight / 2);
   }
 
   /**
   * アニメーションをさせる
   */
-  doAnimate = () => {
-    document.addEventListener('mousemove', this.mouseMove);
-    window.requestAnimationFrame(this.tick);
+  public doAnimate = () => {
+    document.addEventListener('mousemove', this.#mouseMove);
+    window.requestAnimationFrame(this.#tick);
   }
 
   /**
   * 再描画するためのメソッド
   */
-  tick = () => {
+  #tick = () => {
     //カーソルの座標(現在位置に動いた距離を加算して座標に反映)
-    this.currentX += (this.mouseX - this.currentX) * this.ease;
-    this.currentY += (this.mouseY - this.currentY) * this.ease;
-    gsap.set(this.target, {
+    this.#currentX += (this.#mouseX - this.#currentX) * this.#ease;
+    this.#currentY += (this.#mouseY - this.#currentY) * this.#ease;
+    gsap.set(this.#target, {
       //オブジェクトの座標(カーソルが動いた後の座標を基点としている。)
-      x: this.currentX * this.easeVector,
-      y: this.currentY * this.easeVector,
+      x: this.#currentX * this.#easeVector,
+      y: this.#currentY * this.#easeVector,
     });
-    window.requestAnimationFrame(this.tick);
+    window.requestAnimationFrame(this.#tick);
   }
 
 
