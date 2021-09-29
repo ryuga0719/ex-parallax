@@ -5,3 +5,4 @@
 ## Tech
 - TypeScript
 - Vite
+- gsap
